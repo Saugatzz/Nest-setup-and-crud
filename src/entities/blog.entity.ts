@@ -11,9 +11,11 @@ export class blog {
   name: string;
 
 
-  @ManyToOne(() => Category)
+  @ManyToOne(() => Category, category => category.blogs, {
+    
+  })
   @JoinColumn({ name: 'categoryId' })
-  category?: Category;
+  category: Category;
 
  
   @Column({type: "varchar" })

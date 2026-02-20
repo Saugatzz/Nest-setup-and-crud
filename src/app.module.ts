@@ -7,6 +7,9 @@ import * as dotenv from 'dotenv';
 import { Category } from './entities/category.entity';
 import { BlogModule } from './blog/blog.module';
 import { blog } from './entities/blog.entity';
+import { AuthModule } from './auth/auth.module';
+import { UserModule } from './user/user.module';
+import { user } from './entities/user.entity';
 dotenv.config()
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -17,10 +20,10 @@ dotenv.config()
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
       charset: 'utf8mb4',
-      entities: [Category, blog],
+      entities: [Category, blog, user],
       synchronize: true,
       autoLoadEntities: true,
-  }), CategoryModule, BlogModule],
+  }), CategoryModule, BlogModule, AuthModule, UserModule],
   controllers: [AppController],
   providers: [AppService],
 })

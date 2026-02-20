@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { blog } from './blog.entity';
 
 @Entity('category')
 export class Category {
@@ -22,4 +23,6 @@ export class Category {
 
   @Column({ type: "int" })
   displayOrder?: number;
+  @OneToMany(() => blog, blog => blog.category)
+  blogs: blog[];
 }

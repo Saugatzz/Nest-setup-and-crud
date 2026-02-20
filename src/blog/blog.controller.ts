@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post } from '@nestjs/common';
 import { BlogService } from './blog.service';
-import { CreateBlogDto } from 'src/auth/dto/create-blog.dto';
-import { UpdateBlogDto } from 'src/auth/dto/updateBlog.dto';
+import { CreateBlogDto } from 'src/blog/dto/create-blog.dto';
+import { UpdateBlogDto } from 'src/blog/dto/updateBlog.dto';
 
 @Controller('blog')
 export class BlogController {

@@ -15,7 +15,10 @@ export class CategoryService {
         console.log('ID not found');
     }
     await this.categoryRepo.remove(category);
-    console.log('category deleted successfully');
+      return{
+        message: 'category deleted successfully',
+        
+    };
    }
 
 
